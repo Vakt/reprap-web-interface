@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>RepRap Printer</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="style.css">
+<script src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+function reload_div() {
+   $.ajax({
+      url : "cache/lock.log",
+      dataType: "text",
+      success : function (data) {
+         data=data.replace(/\n/g, "<br />");
+         $(".content").html(data);
+      }
+   });
+   setTimeout(reload_div, 1000);
+}
+
+$(document).ready(function() {
+   $.ajax({
+      url : 'cache/lock.log',
+      dataType: "text",
+      error : function() {
+          window.location="index.html";
+      }
+   });
+   document.getElementById('submitbtn').disabled = true;
+   reload_div();
+});
+</script>
+</head>
+<body>
+<div id="stopprint">
+<form action="cgi-bin/stop_print.py" method="post">
+   <input type="checkbox" name="confirm" id="confirmbox" value="true" onchange="document.getElementById('submitbtn').disabled = !this.checked;">
+   <label for="confirm">I really want to stop printing!</label><br>
+   <input type="submit" id="submitbtn" value="Stop Printing">
+</form>
+</div>
+<h1><img src="logo.svg" alt="RepRap" title="RepRap"></h1>
+<h2>Printing...</h2>
+<div class="content"></div>
+<div id="footer">Copyright &copy; 2013 <a href="http://www.tbi.univie.ac.at">TBI Vienna</a>, <a href="http://www.gnu.org/licenses/">GPLv3.0</a></div>
+</body>
+</html>
+

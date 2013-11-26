@@ -1,0 +1,41 @@
+body {
+   padding:30px;
+   font-family: Verdana;
+   overflow: auto;
+}
+
+#footer {
+   background: url(bottom.png) bottom repeat-x fixed;
+   text-align: center;
+   padding-top: 10px;
+   color: white;
+   font-size: small;
+   height: 25px;
+   position: fixed;
+   bottom: 0;
+   left:0;
+   right:0;
+}
+
+#footer a:link { color:white; }
+#footer a:hover { color: #DDDDDD; }
+#footer a:visited { color:white; }
+#footer a:active { color: #DDDDDD; }
+
+#stopprint {
+   position: fixed;
+   right: 30px;
+   border:1px solid #BBBBBB;
+   border-radius:6px;
+   padding:10px;
+   background:#EEEEEE;
+}
+
+h1 img {
+   vertical-align:text-bottom;
+   height:50px;
+}
+
+h2, h3 {
+   padding-bottom: 8px;
+}
