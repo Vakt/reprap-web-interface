@@ -11,7 +11,7 @@ Further you might need to adjust the owner of the files and execution rights (e.
 
 USAGE
 -----
-Call the index.html file from any web-browser, upload a *.gcode file made for your reprap printer and press "Start". As long as a print-job is running, you will be redirected to running.html where you cal also stop the current job.
+Call the index.html file from any web-browser, upload a *.gcode file made for your reprap printer and press "Start". As long as a print-job is running, you will be redirected to running.html showing all the logs from the printer and a form to stop the current job.
 
 TODO
 ----
