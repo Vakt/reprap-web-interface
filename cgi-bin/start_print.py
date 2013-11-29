@@ -46,7 +46,7 @@ else:
          open(cache_folder + fn, 'wb').write(fileitem.file.read())
          # message = 'The file "' + fn + '" was uploaded successfully'
          
-         system_execute('/usr/bin/python send.py -v -b 115200 -n ' + cache_folder + fn, cache_folder, log_lock_file)
+         system_execute('/usr/bin/python ../Printrun/printcore.py -v -s /dev/ttyUSB0 ' + cache_folder + fn, cache_folder, log_lock_file)
          redirect_running()
          
       # Print some Error Messages   
