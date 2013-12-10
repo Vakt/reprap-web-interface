@@ -31,6 +31,7 @@ function reload_div() {
       dataType: "text",
       success : function (data) {
          data=data.replace(/\n/g, "<br />");
+         data=data.replace(/Progress/g, "<br />Progress");
          $(".content").html(data);
       }
    });
